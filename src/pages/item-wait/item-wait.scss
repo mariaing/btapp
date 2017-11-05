@@ -1,0 +1,32 @@
+page-item-wait {
+  background-color: grey !important;
+  ion-content{
+    margin-top: 100px;
+    background-color: grey !important;
+
+  }
+  .label-time {
+    color: #f4f4f4;
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .timer{
+    padding-top: 25px;
+    text-align: center;
+  }
+
+  .pas-time {
+    color: white;
+    font-size: 78px;
+    font-weight: bold;
+    line-height: 0.7;
+    margin-bottom: 2px;
+  }
+
+  .label-min {
+    color: #f4f4f4;
+    font-size: 21px;
+  }
+
+}

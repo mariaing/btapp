@@ -1,0 +1,53 @@
+{
+  "NAME": "Nombre",
+  "PASSWORD": "Contraseña:",
+  "USERNAME": "Usuario:",
+  "LOGIN": "Iniciar sesión",
+  "SIGNUP": "Registrarse",
+  "BACK_BUTTON_TEXT": "Atras",
+  "TAB1_TITLE": "Servicios",
+  "TAB2_TITLE": "Dispositivo",
+  "TAB3_TITLE": "Perfil",
+
+  "MAP_TITLE": "Ubicacion servicio",
+  "PROFILE_TITLE": "Perfil",
+  "CONFIRM_BUTTON": "CONFIRMAR",
+
+  "TUTORIAL_SKIP_BUTTON": "Omitir",
+  "TUTORIAL_CONTINUE_BUTTON": "Continuar",
+
+  "TUTORIAL_SLIDE1_TITLE": "Bienvenido/a a BTproject",
+  "TUTORIAL_SLIDE1_DESCRIPTION": "<b>BTproject</b> es una app construida como proyecto de grado para la Universidad Popular del Cesar (UPC).",
+
+  "TUTORIAL_SLIDE2_TITLE": "Cómo usar BTproject",
+  "TUTORIAL_SLIDE2_DESCRIPTION": "Simple, consulta tus datos de acceso con la empresa a la cual trabajas, inicia sesion y disfruta de su facil uso.",
+
+  "TUTORIAL_SLIDE3_TITLE": "Empezando",
+  "TUTORIAL_SLIDE3_DESCRIPTION": "¿Necesitas ayuda en algo? contacta con soporte y resulvelas.",
+
+  "TUTORIAL_SLIDE4_TITLE": "Estas listo?",
+
+  "WELCOME_INTRO": "Inicia sesion con tu cuenta",
+
+  "SETTINGS_TITLE": "Ajustes",
+  "SETTINGS_OPTION1": "Opción 1",
+  "SETTINGS_OPTION2": "Opción 2",
+  "SETTINGS_OPTION3": "Opción 3",
+  "SETTINGS_OPTION4": "Opción 4",
+
+  "SETTINGS_PAGE_PROFILE": "Editar Perfil",
+
+  "WELCOME_TITLE": "Bienvenido/a",
+
+  "LOGIN_ERROR": "No se ha podido iniciar sesión. Por favor revisa la información de la cuenta e inténtalo de nuevo.",
+  "LOGIN_BUTTON": "Iniciar sesión",
+
+  "LIST_MASTER_TITLE": "Servicios",
+
+  "ITEM_CREATE_TITLE": "Nuevo Item",
+  "ITEM_CREATE_CHOOSE_IMAGE": "Añadir Imagen",
+
+  "DEVICES_TITLE": "Dispositivos",
+
+  "SEARCH_TITLE": "Buscar"
+}

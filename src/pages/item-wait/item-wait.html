@@ -1,0 +1,38 @@
+<!--
+  Generated template for the ItemWaitPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--<ion-header>-->
+<!---->
+  <!--<ion-navbar>-->
+    <!--<ion-title>item-wait</ion-title>-->
+  <!--</ion-navbar>-->
+<!---->
+<!--</ion-header>-->
+
+
+<ion-content overflow-scroll="true" padding="true" style="padding: 40px" class="positive-bg">
+  <div class="label-time">
+    <h2>Tiempo transcurrido en :</h2>
+    <p>{{service.ciudad }} {{service.direccion}}</p>
+    <p>Cliente: {{service.cliente_nombre}}</p>
+  </div>
+  <div class="timer">
+    <h1 class="pas-time">{{tTranscurrido}}</h1>
+    <span class="label-min">minutos</span>
+  </div>
+  <div class="spacer" style="height: 35px;"></div>
+
+  <button ion-button block
+          (click)="cancelarAsignacion()">
+    Cancelar
+  </button>
+  <br>
+  <button ion-button block
+          (click)="finalizarTrabajo()">
+    Finalizar trabajo
+  </button>
+
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar primary>
+    <ion-title>{{ 'LIST_MASTER_TITLE' | translate }}</ion-title>
+    <ion-buttons ion-button icon-only left>
+      <button ion-button (click)="pageChat()">
+        <ion-icon name="mail"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons ion-button icon-only right>
+      <button ion-button (click)="logout()">
+        <ion-icon name="power"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding align-items-center>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+                pullingIcon="arrow-dropdown"
+                pullingText="Hacia abajo para actualizar"
+                refreshingSpinner="circles"
+                refreshingText="Cargando servicios...">
+        </ion-refresher-content>
+    </ion-refresher>
+  <div style="text-align: center" (click)="goPageMyListService()">
+    <button ion-button>Listar mis servicios finalizados</button>
+  </div>
+  <br>
+  <div *ngIf="currentItems.length === 0" style="text-align: center;">
+    <img src="assets/img/service.png" alt="" style="width: 150px; height: 150px"><br>
+    <span>No se encontraron servicios asignados</span>
+  </div>
+
+
+  <ion-list *ngIf="currentItems.length > 0">
+    <ion-item-sliding *ngFor="let item of currentItems">
+      <button ion-item (click)="openItem(item)">
+        <h2>{{item.cliente_nombre}}</h2>
+        <h3>{{item.ciudad}} {{item.direccion}}</h3>
+        <p >{{item.fecha_asignada | date: 'dd/MM/yyyy'}} a las {{item.hora_asignada}}</p>
+      </button>
+
+      <ion-item-options>
+        <button ion-button color="secondary" (click)="confirmItem(item)">
+          {{ 'CONFIRM_BUTTON' | translate }}
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <br>
+  </ion-list>
+</ion-content>

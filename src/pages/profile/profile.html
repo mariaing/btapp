@@ -1,0 +1,81 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{ 'PROFILE_TITLE' | translate }}</ion-title>
+        <ion-buttons ion-button icon-only left>
+            <button ion-button (click)="pageChat()">
+                <ion-icon name="mail"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-buttons ion-button icon-only right>
+            <button ion-button  (click)="logout()">
+                <ion-icon name="power"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <div id="profile-bg"></div>
+    <div id="content">
+        <div id="profile-info">
+            <div (click)="editImage()">
+                <img id="profile-image" *ngIf="data.empleado.imagen !== null "
+                     [src]="api.url+'/images/empleados/'+data.empleado.imagen+''">
+                <img id="profile-image" *ngIf="data.empleado.imagen === null " src="assets/img/image-user.png">
+                <!--<img id="profile-image"   [src]="'assets/img/marty-avatar.png'">-->
+                <ion-icon name="camera"></ion-icon>
+            </div>
+            <h3 id="profile-name">{{data.empleado.nombres}} {{data.empleado.apellidos}}</h3>
+            <span id="profile-description" (click)="changeEstado('disponible')" *ngIf="data.empleado.estado === 'disponible'"><b>Estado:</b> <b style="color: green">Disponible</b></span>
+            <span id="profile-description" (click)="changeEstado('ocupado')"  *ngIf="data.empleado.estado === 'ocupado'"><b>Estado:</b> <b style="color: orange">Ocupado</b></span>
+            <span id="profile-description" (click)="changeEstado('calamidad')"  *ngIf="data.empleado.estado === 'calamidad'"><b>Estado:</b> <b style="color: red">En calamidad</b></span>
+            <br>
+            <span *ngIf="carga_bateria > 0 || carga_bateria != null">Carga de la pulsera: {{carga_bateria}} %</span><br>
+            <span> </span><br>
+        </div>
+    </div>
+    <div><br>
+        <h2 text-center>Informacion personal</h2>
+        <form [formGroup]="infoEmployeForm">
+            <ion-item>
+                <ion-label>Identificación</ion-label>
+                <ion-input type="text" formControlName="identificacion"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Nombres</ion-label>
+                <ion-input type="text" formControlName="nombres"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Apellidos</ion-label>
+                <ion-input type="text" formControlName="apellidos"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Telefono</ion-label>
+                <ion-input type="text" formControlName="telefono"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Dirección</ion-label>
+                <ion-input type="text" formControlName="direccion"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>E-mail</ion-label>
+                <ion-input type="text" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Fecha de nacimiento</ion-label>
+                <ion-datetime displayFormat="MMM DD YYYY"  [cancelText]="'Cancelar'" [doneText]="'Aceptar'"
+                              formControlName="fecha_nacimiento"></ion-datetime>
+            </ion-item>
+        </form>
+        <ion-row>
+            <ion-col width-50>
+                <button ion-button type="submit" block [disabled]="!infoEmployeForm.valid" (click)="editDataForm()"> Guardar datos  </button>
+            </ion-col>
+            <ion-col width-50>
+                <button ion-button block (click)="openModalChagePass()" color="dark"> Cambiar contrase&ntilde;a</button>
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-content>

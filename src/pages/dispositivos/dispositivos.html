@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'DEVICES_TITLE' | translate }}</ion-title>
+    <ion-buttons ion-button icon-only left>
+      <button ion-button (click)="pageChat()">
+        <ion-icon name="mail"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons ion-button icon-only right>
+      <button ion-button (click)="logout()">
+        <ion-icon name="power"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+                pullingIcon="arrow-dropdown"
+                pullingText="Hacia abajo para actualizar"
+                refreshingSpinner="circles"
+                refreshingText="Buscando dispositivos...">
+        </ion-refresher-content>
+    </ion-refresher>
+
+  <ion-grid *ngIf="!deviceItems.length">
+    <ion-row>
+      <ion-col width-12>No se encontro ningun dispositivo encendido</ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid  *ngIf="deviceItems.length > 0">
+    <ion-card *ngFor="let item of deviceItems">
+      <ion-item>
+        <h2>{{item.name}}</h2>
+        <p>{{item.id}}</p>
+      </ion-item>
+      <ion-row align-items-center>
+        <ion-col>
+          <button ion-button color="primary" clear small icon-start (click)="connect(item)">
+            <ion-icon name='thumbs-up'></ion-icon>
+            Conectar
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-grid>
+</ion-content>
